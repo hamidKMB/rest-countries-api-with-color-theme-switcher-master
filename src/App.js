@@ -16,7 +16,7 @@ function App({ToggleDarkMode, isDark}) {
   return (
     <div className="App">
       <header className="block shadow-lg bg-white dark:bg-DarkModeElement">
-        <div className="flex flex-row-reverse items-center py-5 container mx-auto text-LightModeText dark:text-DarkModeText">
+        <div className="flex flex-row-reverse items-center py-5 container mx-auto px-2 text-LightModeText dark:text-DarkModeText">
           <h4
             className="inline-block hover: cursor-pointer font-semibold text-base"
             onClick={ToggleDarkMode}
@@ -25,7 +25,7 @@ function App({ToggleDarkMode, isDark}) {
             <span className="transform rotate-90">🌙 </span>
             Dark Mode
           </h4>
-          <h1 className="inline-block mr-auto text-2xl font-extrabold">
+          <h1 className="inline-block mr-auto text-base sm:text-2xl font-extrabold">
             Where in the world?
           </h1>
         </div>
