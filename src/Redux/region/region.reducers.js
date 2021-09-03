@@ -13,7 +13,13 @@ export default function regionReducer(state = INITIAL_STATE, action) {
                     selectedRegion: action.payload
                 }
             )
-            
+        case regionTypes.DELETE_REGION :
+            return(
+                {
+                    ...state,
+                    selectedRegion: null
+                }
+            )
         default:
             return state
     }

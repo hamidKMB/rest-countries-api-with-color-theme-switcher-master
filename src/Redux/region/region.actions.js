@@ -5,4 +5,8 @@ const regionAction = (event) => ({
     payload: event.target.value
 })
 
+export const emptyRegion = () => ({
+    type: regionTypes.DELETE_REGION
+})
+
 export default regionAction
