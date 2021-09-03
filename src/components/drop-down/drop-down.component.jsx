@@ -8,7 +8,7 @@ const DropDown = ({regionAction}) => {
 
     return (
       <div
-        className="relative bg-LightModeElement dark:bg-DarkModeElement shadow-lg w-72 py-4 px-5 rounded cursor-pointer"
+        className="relative bg-LightModeElement dark:bg-DarkModeElement shadow-lg w-56 py-4 px-5 rounded cursor-pointer mr-auto sm:m-0"
         onMouseEnter={() => setDropDown(true)}
         onMouseLeave={() => setDropDown(false)}
       >
@@ -20,7 +20,7 @@ const DropDown = ({regionAction}) => {
           ></i>
         </span>
         {dropDown && (
-          <div className="absolute bg-LightModeElement dark:bg-DarkModeElement text-LightModeText dark:text-DarkModeText font-semibold shadow-lg w-72 flex flex-col py-4 px-5 rounded left-0 top-15 mt-5 transition-all duration-700">
+          <div className="absolute bg-LightModeElement dark:bg-DarkModeElement text-LightModeText dark:text-DarkModeText font-semibold shadow-lg w-56 flex flex-col py-4 px-5 rounded left-0 top-15 mt-5 transition-all duration-700">
             {regions.map((item, index) => (
               <input
                 key ={index}

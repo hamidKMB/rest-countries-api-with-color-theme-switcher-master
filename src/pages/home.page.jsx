@@ -4,10 +4,10 @@ import SearchBar from "../components/search-bar/search-bar.component"
 import { connect } from "react-redux";
 
 const Home = ({selectedRegion, countryName}) => {
-    console.log(selectedRegion + "In HomePage");
+    
     return (
       <div className="bg-LightModeBg dark:bg-DarkModeBg h-screen">
-        <div className="container mx-auto px-2 pt-20">
+        <div className="container mx-auto px-2 pt-8 sm:pt-20">
             <div className="flex flex-col sm:flex-row justify-between items-center">
                 <SearchBar/>
                 <DropDown/>
