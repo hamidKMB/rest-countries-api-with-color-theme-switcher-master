@@ -1,25 +1,51 @@
-import logo from './logo.svg';
+import React from "react"
+import { Route, Switch } from "react-router-dom";
+import { connect } from "react-redux";
+import ToggleDarkMode from "./Redux/darkMode/darkMode.actions"
 import './App.css';
+import Home from "./pages/home.page";
+import SelectedCountry from "./pages/selected-country.page";
 
-function App() {
+function App({ToggleDarkMode, isDark}) {
+    React.useEffect(() => {
+      isDark
+        ? document.documentElement.classList.add("dark")
+        : document.documentElement.classList.remove("dark");
+    }, [isDark])
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header className="block shadow-lg bg-white dark:bg-DarkModeElement">
+        <div className="flex flex-row-reverse items-center py-5 container mx-auto text-LightModeText dark:text-DarkModeText">
+          <h4
+            className="inline-block hover: cursor-pointer font-semibold text-base"
+            onClick={ToggleDarkMode}
+          >
+            {" "}
+            <span className="transform rotate-90">🌙 </span>
+            Dark Mode
+          </h4>
+          <h1 className="inline-block mr-auto text-2xl font-extrabold">
+            Where in the world?
+          </h1>
+        </div>
       </header>
+      <Switch>
+        <Route path="/" component={Home} exact/>
+        <Route path="/:country" component={SelectedCountry}/>
+      </Switch>
     </div>
   );
 }
 
-export default App;
+
+//REDUX
+const mapStateToProps = ({darkMode: { isDark }}) => ({
+  isDark,
+})
+
+const mapDispatchToProps = (dispatch) => ({
+  ToggleDarkMode: () => dispatch(ToggleDarkMode())
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
