@@ -8,7 +8,7 @@ module.exports = {
       DarkModeText: "hsl(0, 0%, 100%)",
       LightModeText: "hsl(200, 15%, 8%)",
       LightModeInput: "hsl(0, 0%, 52%)",
-      LightModeBg: "hsl(0, 0%, 98%)",
+      LightModeBg: "hsl(0, 0%, 95%)",
       LightModeElement: "hsl(0, 0%, 100%)",
     },
     extend: {},

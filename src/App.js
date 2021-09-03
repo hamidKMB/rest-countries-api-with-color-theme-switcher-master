@@ -15,7 +15,7 @@ function App({ToggleDarkMode, isDark}) {
 
   return (
     <div className="App">
-      <header className="block shadow-lg bg-white dark:bg-DarkModeElement">
+      <header className="block shadow-lg bg-white dark:bg-DarkModeElement z-10 relative">
         <div className="flex flex-row-reverse items-center py-5 container mx-auto px-2 text-LightModeText dark:text-DarkModeText">
           <h4
             className="inline-block hover: cursor-pointer font-semibold text-base"
