@@ -7,3 +7,7 @@ const searchCountryAction = (event) => ({
 })
 
 export default searchCountryAction
+
+export const emptyCountryName = () => ({
+    type: searchCountryTypes.EMPTY_COUNTRY_NAME
+})

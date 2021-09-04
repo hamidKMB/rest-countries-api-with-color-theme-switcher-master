@@ -31,7 +31,6 @@ const Home = ({selectedRegion, countryName, emptyRegion}) => {
             .catch((err) => console.log(err));
         }
     },[selectedRegion, countryName, emptyRegion])
-    console.log(state);
     return (
       <div className="bg-LightModeBg dark:bg-DarkModeBg h-full min-h-screen">
         <div className="container mx-auto px-2 pt-8 sm:pt-16 mb-8">
@@ -68,7 +67,7 @@ const mapStateToProps = ({region:{selectedRegion}, searchCountry:{countryName}})
 })
 
 const mapDispatchToProps = (dispatch) => ({
-    emptyRegion: () => dispatch(emptyRegion())
+    emptyRegion: () => dispatch(emptyRegion()) ,
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home)

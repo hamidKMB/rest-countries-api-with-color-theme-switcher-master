@@ -13,7 +13,12 @@ const searchCountryReducer = (state = INITIAL_STATE, action) => {
                     countryName: action.payload
                 }
             )
-            
+        case searchCountryTypes.EMPTY_COUNTRY_NAME:
+            return(
+                {
+                    countryName: null
+                }
+            )
         default:
             return state
     }
