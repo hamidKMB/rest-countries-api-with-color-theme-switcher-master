@@ -5,7 +5,7 @@ import {ReactComponent as SearchLogo} from "./searchLogo.svg";
 
 const SearchBar = ({searchCountryAction}) => {
     return (
-      <div className="bg-LightModeElement dark:bg-DarkModeElement flex flex-row items-center shadow-lg rounded w-full sm:w-1/2 md:w-1/3 py-4 px-5 mb-5 sm:mb-0">
+      <div className="bg-LightModeElement dark:bg-DarkModeElement flex flex-row items-center shadow-lg rounded w-full sm:w-1/2 md:w-1/3 py-3 px-5 mb-5 sm:mb-0">
         <SearchLogo />
         <input
           type="text"

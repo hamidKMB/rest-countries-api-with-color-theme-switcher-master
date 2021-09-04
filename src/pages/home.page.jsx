@@ -4,10 +4,11 @@ import SearchBar from "../components/search-bar/search-bar.component"
 import { connect } from "react-redux";
 import ApiRequest from "../ApiRequest";
 import { emptyRegion } from "../Redux/region/region.actions";
-import { useHistory } from "react-router";
+import CountryDetailHomePage from "../components/country-detail-home-page/country-detail-home-page.component";
+
 
 const Home = ({selectedRegion, countryName, emptyRegion}) => {
-    const history = useHistory();
+    
     const [state, setState] =  React.useState([])
     
     React.useEffect(() => {
@@ -21,11 +22,7 @@ const Home = ({selectedRegion, countryName, emptyRegion}) => {
             emptyRegion()
             :
             ApiRequest(`/region/${selectedRegion}`, "GET")
-                .then((res) => 
-                    res.status === "SUCCESS" ?
-                        setState(res.data):
-                        setState("Not Found")
-                        )
+                .then((res) => setState(res.data))
                 .catch((err) => console.log(err));
 
         } else {
@@ -37,33 +34,33 @@ const Home = ({selectedRegion, countryName, emptyRegion}) => {
     console.log(state);
     return (
       <div className="bg-LightModeBg dark:bg-DarkModeBg h-full min-h-screen">
-        <div className="container mx-auto px-2 pt-8 sm:pt-20 mb-5">
+        <div className="container mx-auto px-2 pt-8 sm:pt-16 mb-8">
           <div className="flex flex-col sm:flex-row justify-between items-center">
             <SearchBar />
             <DropDown />
           </div>
         </div>
-        <div className="container mx-auto px-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-7">
+        <div className="container mx-auto px-0 lg:px-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 lg:gap-7">
           {
             Array.isArray(state) ?
             state.map((item, index) => (
-            <div key={index} className="bg-LightModeElement dark:bg-DarkModeElement rounded-md shadow-xl mx-auto h-64 w-5/6" onClick={() => history.push(`${item.name}`)}>
-              <div className="h-1/2">
-                <img alt="alt" src={item.flag} className="w-full h-full object-cover rounded-t-md"/>
-              </div>
-              <div className="h-1/2">
-                  {item.name}
-              </div>
-            </div>
+            <CountryDetailHomePage
+              key= {index}
+              countryName= {item.name}
+              flag = {item.flag}
+              population = {item.population}
+              capital = {item.capital}
+              region = {item.region}
+            />
           ))
           :
-            <h1>
-                NOT FOUND
-            </h1>
+          <h1 className="text-3xl font-bold absolute w-11/12 mt-36 text-center text-LightModeText dark:text-DarkModeText">
+            Not Found Retry
+          </h1>
           }
         </div>
       </div>
-    );}
+    )}
 
 const mapStateToProps = ({region:{selectedRegion}, searchCountry:{countryName}}) => ({
     selectedRegion,

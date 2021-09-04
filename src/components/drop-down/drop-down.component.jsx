@@ -7,7 +7,7 @@ const DropDown = ({regionAction, selectedRegion}) => {
     const [dropDown, setDropDown] = React.useState(false);
     return (
       <div
-        className="relative bg-LightModeElement dark:bg-DarkModeElement shadow-lg w-56 py-4 px-5 rounded cursor-pointer mr-auto sm:m-0"
+        className="relative bg-LightModeElement dark:bg-DarkModeElement shadow-lg w-56 py-3 px-5 rounded cursor-pointer mr-auto sm:m-0"
         onMouseEnter={() => setDropDown(true)}
         onMouseLeave={() => setDropDown(false)}
       >

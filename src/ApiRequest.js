@@ -12,6 +12,7 @@ export default async function ApiRequest(url, method) {
         })
         return response
     } catch (error) {
-        console.log(error)
+        const errorResponse = await error.response
+        return errorResponse.data
     }
 }
