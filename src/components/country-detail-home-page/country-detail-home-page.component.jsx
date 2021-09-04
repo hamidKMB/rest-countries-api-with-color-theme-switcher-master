@@ -5,7 +5,7 @@ const CountryDetailHomePage = ({countryName, flag, population, region, capital})
     const history = useHistory();
     return (
       <div
-        className="bg-LightModeElement dark:bg-DarkModeElement rounded-md shadow-xl mx-auto h-64 w-5/6 cursor-pointer"
+        className="bg-LightModeElement dark:bg-DarkModeElement rounded-md shadow-xl mx-auto h-64 md:h-80 xl:h-64 w-5/6 cursor-pointer"
         onClick={() => history.push(`${countryName}`)}
       >
         <div className="h-1/2">
@@ -16,7 +16,7 @@ const CountryDetailHomePage = ({countryName, flag, population, region, capital})
           />
         </div>
         <div className="h-1/2 p-5 text-left text-LightModeText dark:text-DarkModeText">
-          <h4 className="font-bold mb-2">{countryName}</h4>
+          <h4 className="font-bold mb-2 text-sm">{countryName}</h4>
           <p className="text-sm">
             <span className="font-semibold">Population:</span> {population}
           </p>

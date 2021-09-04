@@ -30,7 +30,7 @@ const SelectedCountry = ({emptyCountryName}) => {
     
     return (
       countryDetail.length !== 0 && (
-        <div className="h-full bg-LightModeBg dark:bg-DarkModeBg">
+        <div className="h-full min-h-screen bg-LightModeBg dark:bg-DarkModeBg">
           <div className="flex container mx-auto px-2">
             <button
               className="py-2 px-3 rounded mr-auto my-10 shadow-lg bg-LightModeElement dark:bg-DarkModeElement mr-auto text-LightModeText dark:text-DarkModeText"
@@ -44,38 +44,45 @@ const SelectedCountry = ({emptyCountryName}) => {
             </button>
           </div>
           <div className="flex container flex-col sm:flex-row mx-auto px-2">
-            <div className="w-full sm:w-72 h-56">
+            <div className="w-full h-56 md:w-96 md:h-80 sm: mr-10 xl:mr-auto">
               <img
                 src={countryDetail[0].flag}
                 alt="flag"
                 className="h-full w-full object-cover"
               />
             </div>
-            <div className="flex flex-col">
+            <div className="flex flex-col sm:mx-auto">
               <h1 className="my-5 text-xl font-bold mr-auto text-LightModeText dark:text-DarkModeText">
                 {country}
               </h1>
-              <div className="flex flex-col sm:flex-row text-left text-LightModeText dark:text-DarkModeText">
-                <div>
+              <div className="flex flex-col sm:flex-row text-left text-LightModeText dark:text-DarkModeText sm:items-baseline">
+                <div className="sm:mr-10 sm:mb-7">
                   <p>
-                    <span className="font-semibold mr-2">Native Name: </span> {countryDetail[0].nativeName}
+                    <span className="font-semibold mr-2">Native Name: </span>{" "}
+                    {countryDetail[0].nativeName}
                   </p>
                   <p>
-                    <span className="font-semibold mr-2">Population: </span> {countryDetail[0].population}
+                    <span className="font-semibold mr-2">Population: </span>{" "}
+                    {countryDetail[0].population}
                   </p>
                   <p>
-                    <span className="font-semibold mr-2">Region: </span> {countryDetail[0].region}
+                    <span className="font-semibold mr-2">Region: </span>{" "}
+                    {countryDetail[0].region}
                   </p>
                   <p>
-                    <span className="font-semibold mr-2">Sub Region: </span> {countryDetail[0].subregion}
+                    <span className="font-semibold mr-2">Sub Region: </span>{" "}
+                    {countryDetail[0].subregion}
                   </p>
                   <p>
-                    <span className="font-semibold mr-2">Capital: </span> {countryDetail[0].capital}
+                    <span className="font-semibold mr-2">Capital: </span>{" "}
+                    {countryDetail[0].capital}
                   </p>
                 </div>
                 <div className="my-6">
                   <p>
-                    <span className="font-semibold mr-2">Top Level Domain: </span>
+                    <span className="font-semibold mr-2">
+                      Top Level Domain:{" "}
+                    </span>
                     {countryDetail[0].topLevelDomain[0]}
                   </p>
                   <p>
@@ -96,7 +103,7 @@ const SelectedCountry = ({emptyCountryName}) => {
                   borders.map((item, index) => (
                     <button
                       key={index}
-                      className="bg-LightModeElement dark:bg-DarkModeElement rounded text-LightModeText dark:text-DarkModeText p-1 mr-auto mb-2"
+                      className="bg-LightModeElement dark:bg-DarkModeElement rounded text-LightModeText dark:text-DarkModeText p-1 mr-auto sm:mr-4 mb-2"
                     >
                       {item.name}
                     </button>
