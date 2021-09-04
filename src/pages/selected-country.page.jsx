@@ -29,78 +29,88 @@ const SelectedCountry = ({emptyCountryName}) => {
     },[country, countryDetail])
     
     return (
-    countryDetail.length !==0 &&
-      <div className="h-full bg-LightModeBg dark:bg-DarkModeBg">
-        <div className="flex container mx-auto px-2">
-          <button
-            className="shadow-lg bg-LightModeElement dark:bg-DarkModeElement mr-auto"
-            onClick={() => {
-                history.push("/")
-                emptyCountryName()
-            }}
-          >
-            Back
-          </button>
-        </div>
-        <div className="flex container flex-col-reverse sm:flex-row mx-auto px-2">
-          <div className="w-56 h-56">
-            <img
-              src={countryDetail[0].flag}
-              alt="flag"
-              className="h-full w-full object-cover"
-            />
+      countryDetail.length !== 0 && (
+        <div className="h-full bg-LightModeBg dark:bg-DarkModeBg">
+          <div className="flex container mx-auto px-2">
+            <button
+              className="py-2 px-3 rounded mr-auto my-10 shadow-lg bg-LightModeElement dark:bg-DarkModeElement mr-auto text-LightModeText dark:text-DarkModeText"
+              onClick={() => {
+                history.push("/");
+                emptyCountryName();
+              }}
+            >
+              <i className="fa fa-chevron-left mr-5 text-sm"></i>
+              Back
+            </button>
           </div>
-          <div className="flex flex-col">
-            <h1 className="text-lg mr-auto">{country}</h1>
-            <div className="flex flex-col sm:flex-row text-left text-LightModeText dark:text-DarkModeText">
-              <div>
-                <p>
-                  <span>Native Name: </span> {countryDetail[0].nativeName}
-                </p>
-                <p>
-                  <span>Population: </span> {countryDetail[0].population}
-                </p>
-                <p>
-                  <span>Region: </span> {countryDetail[0].region}
-                </p>
-                <p>
-                  <span>Sub Region: </span> {countryDetail[0].subregion}
-                </p>
-                <p>
-                  <span>Capital: </span> {countryDetail[0].capital}
-                </p>
+          <div className="flex container flex-col sm:flex-row mx-auto px-2">
+            <div className="w-full sm:w-72 h-56">
+              <img
+                src={countryDetail[0].flag}
+                alt="flag"
+                className="h-full w-full object-cover"
+              />
+            </div>
+            <div className="flex flex-col">
+              <h1 className="my-5 text-xl font-bold mr-auto text-LightModeText dark:text-DarkModeText">
+                {country}
+              </h1>
+              <div className="flex flex-col sm:flex-row text-left text-LightModeText dark:text-DarkModeText">
+                <div>
+                  <p>
+                    <span className="font-semibold mr-2">Native Name: </span> {countryDetail[0].nativeName}
+                  </p>
+                  <p>
+                    <span className="font-semibold mr-2">Population: </span> {countryDetail[0].population}
+                  </p>
+                  <p>
+                    <span className="font-semibold mr-2">Region: </span> {countryDetail[0].region}
+                  </p>
+                  <p>
+                    <span className="font-semibold mr-2">Sub Region: </span> {countryDetail[0].subregion}
+                  </p>
+                  <p>
+                    <span className="font-semibold mr-2">Capital: </span> {countryDetail[0].capital}
+                  </p>
+                </div>
+                <div className="my-6">
+                  <p>
+                    <span className="font-semibold mr-2">Top Level Domain: </span>
+                    {countryDetail[0].topLevelDomain[0]}
+                  </p>
+                  <p>
+                    <span className="font-semibold mr-2">Currencies: </span>{" "}
+                    {countryDetail[0].currencies[0].name}
+                  </p>
+                  <p>
+                    <span className="font-semibold mr-2">Languages: </span>
+                    {countryDetail[0].languages[0].name}
+                  </p>
+                </div>
               </div>
-              <div>
-                <p>
-                  <span>Top Level Domain: </span>
-                  {countryDetail[0].topLevelDomain[0]}
-                </p>
-                <p>
-                  <span>Currencies: </span>{" "}
-                  {countryDetail[0].currencies[0].name}
-                </p>
-                <p>
-                  <span>Languages: </span> 
-                  {countryDetail[0].languages[0].name}
-                </p>
+              <h1 className="mt-1 font-semibold text-lg mr-auto text-LightModeText dark:text-DarkModeText">
+                Border Countries:
+              </h1>
+              <div className="flex flex-row flex-wrap mx-auto">
+                {borders.length !== 0 ? (
+                  borders.map((item, index) => (
+                    <button
+                      key={index}
+                      className="bg-LightModeElement dark:bg-DarkModeElement rounded text-LightModeText dark:text-DarkModeText p-1 mr-auto mb-2"
+                    >
+                      {item.name}
+                    </button>
+                  ))
+                ) : (
+                  <h4 className="text-LightModeText dark:text-DarkModeText">
+                    no border Country
+                  </h4>
+                )}
               </div>
             </div>
-            <h1 className="mr-auto">Border Countries:</h1>
-            {
-                borders.length !== 0 ?
-                borders.map((item, index) => (
-                    <button key={index}>
-                        {item.name}
-                    </button>
-                ))
-                :
-                <h4>
-                    no border Country
-                </h4>
-            }
           </div>
         </div>
-      </div>
+      )
     );
 }
 
