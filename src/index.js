@@ -10,7 +10,7 @@ import store from "./Redux/store";
 
 ReactDOM.render(
   <Provider store={store}>
-    <HashRouter>
+    <HashRouter basename="/">
       <React.StrictMode>
         <App />
       </React.StrictMode>
