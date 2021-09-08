@@ -1,21 +1,21 @@
 {
   "files": {
-    "main.css": "/rest-countries-api-with-color-theme-switcher-master/static/css/main.dceef94e.chunk.css",
-    "main.js": "/rest-countries-api-with-color-theme-switcher-master/static/js/main.5efff2c5.chunk.js",
-    "main.js.map": "/rest-countries-api-with-color-theme-switcher-master/static/js/main.5efff2c5.chunk.js.map",
-    "runtime-main.js": "/rest-countries-api-with-color-theme-switcher-master/static/js/runtime-main.ca12ab61.js",
-    "runtime-main.js.map": "/rest-countries-api-with-color-theme-switcher-master/static/js/runtime-main.ca12ab61.js.map",
-    "static/js/2.23d00bb7.chunk.js": "/rest-countries-api-with-color-theme-switcher-master/static/js/2.23d00bb7.chunk.js",
-    "static/js/2.23d00bb7.chunk.js.map": "/rest-countries-api-with-color-theme-switcher-master/static/js/2.23d00bb7.chunk.js.map",
-    "static/js/3.6a81657a.chunk.js": "/rest-countries-api-with-color-theme-switcher-master/static/js/3.6a81657a.chunk.js",
-    "static/js/3.6a81657a.chunk.js.map": "/rest-countries-api-with-color-theme-switcher-master/static/js/3.6a81657a.chunk.js.map",
-    "index.html": "/rest-countries-api-with-color-theme-switcher-master/index.html",
-    "static/css/main.dceef94e.chunk.css.map": "/rest-countries-api-with-color-theme-switcher-master/static/css/main.dceef94e.chunk.css.map",
-    "static/js/2.23d00bb7.chunk.js.LICENSE.txt": "/rest-countries-api-with-color-theme-switcher-master/static/js/2.23d00bb7.chunk.js.LICENSE.txt",
-    "static/media/searchLogo.12e63a17.svg": "/rest-countries-api-with-color-theme-switcher-master/static/media/searchLogo.12e63a17.svg"
+    "main.css": "/static/css/main.dceef94e.chunk.css",
+    "main.js": "/static/js/main.5efff2c5.chunk.js",
+    "main.js.map": "/static/js/main.5efff2c5.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.82954b80.js",
+    "runtime-main.js.map": "/static/js/runtime-main.82954b80.js.map",
+    "static/js/2.23d00bb7.chunk.js": "/static/js/2.23d00bb7.chunk.js",
+    "static/js/2.23d00bb7.chunk.js.map": "/static/js/2.23d00bb7.chunk.js.map",
+    "static/js/3.6a81657a.chunk.js": "/static/js/3.6a81657a.chunk.js",
+    "static/js/3.6a81657a.chunk.js.map": "/static/js/3.6a81657a.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.dceef94e.chunk.css.map": "/static/css/main.dceef94e.chunk.css.map",
+    "static/js/2.23d00bb7.chunk.js.LICENSE.txt": "/static/js/2.23d00bb7.chunk.js.LICENSE.txt",
+    "static/media/searchLogo.12e63a17.svg": "/static/media/searchLogo.12e63a17.svg"
   },
   "entrypoints": [
-    "static/js/runtime-main.ca12ab61.js",
+    "static/js/runtime-main.82954b80.js",
     "static/js/2.23d00bb7.chunk.js",
     "static/css/main.dceef94e.chunk.css",
     "static/js/main.5efff2c5.chunk.js"
